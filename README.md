@@ -30,8 +30,8 @@ This repository includes also breadboard and schematics pictures in PDF and Frit
 **Functionality of the sketch**
 
 Sketch reads current time from the RTC clock and checks is it time to perform a temperature measurement function.
-After the temperature is measured it will be added to the data string which is sent to Arduino based gateway which will
-send the data to the MQTT server. So this sketch doesn't send temperature data directly to the MQTT server.
+After the temperature is measured it will be added to the data string which is sent to Arduino based gateway via 433MHz RF link which will
+then send the data to the MQTT server. So this sketch doesn't send temperature data directly to the MQTT server.
 
 There is also a sleep function in main loop which will decrease overall power consumption.
 
