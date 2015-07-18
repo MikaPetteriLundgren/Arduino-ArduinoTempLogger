@@ -14,7 +14,7 @@ ArduinoTempLogger sketch will need following HW and SW libraries to work:
 
 * DallasTemperature for DS18B20 temp sensor
 * Wire for I2C communication
-* OneWire for communication with DS18B20 sensos
+* OneWire for communication with DS18B20 sensor
 * VirtualWire for RF communication
 * RTClib for RTC functionality
 * Narcoleptic for sleep functionality
@@ -35,4 +35,4 @@ then send the data to the MQTT server. So this sketch doesn't send temperature d
 
 There is also a sleep function in main loop which will decrease overall power consumption.
 
-It's possible to print amount of free RAM memory of Arduino via serial port by removing comment marks from `#define RAM_DEBUG` line
+It's possible to print amount of free RAM memory of Arduino via serial port by removing comments in front of `#define RAM_DEBUG` line
