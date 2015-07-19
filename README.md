@@ -1,7 +1,11 @@
-ArduinoTempLogger
+Arduino-Temp-Logger
 =================
 
-ArduinoTempLogger sketch will need following HW and SW libraries to work:
+Arduino temperature logger is a wireless temperature measurement unit which will send measured
+temperature values via 433MHz RF link to Arduino gateway. The Arduino gateway will pass the measurement
+values to Domoticz via MQTT protocol.
+
+Arduino-Temp-Logger sketch will need following HW and SW libraries to work:
 
 **HW**
 

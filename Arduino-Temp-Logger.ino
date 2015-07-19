@@ -3,8 +3,8 @@
    Size of AT24C32 EEPROM memory is 4096 bytes. EEPROM is not used in this sketch though.
    
    Temperature readings are read from DS18B20 digital temperature sensor via OneWire bus
-   Data is sent with TX433N RF transmitter using VirtualWire library to Arduino gateway which sends data to Mosquitto server
-   running on Raspberry Pi using MQTT protocol. The Mosquitto server deliveres data to the Domoticz server running on a same Raspberry Pi*/
+   Data is sent with TX433N RF transmitter using VirtualWire library to Arduino gateway which sends data to Domoticz running on
+   Raspberry Pi using MQTT protocol.*/
 
 #include <DallasTemperature.h>
 #include <Wire.h>
