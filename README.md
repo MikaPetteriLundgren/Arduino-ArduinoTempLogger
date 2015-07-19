@@ -39,4 +39,4 @@ then send the data to the MQTT server. So this sketch doesn't send temperature d
 
 There is also a sleep function in main loop which will decrease overall power consumption.
 
-It's possible to print amount of free RAM memory of Arduino via serial port by removing comments in front of `#define RAM_DEBUG` line
+It's possible to print amount of free RAM memory of Arduino via serial port by uncommenting `#define RAM_DEBUG` line
