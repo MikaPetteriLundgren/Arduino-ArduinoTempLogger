@@ -5,6 +5,8 @@ Arduino temperature logger is a wireless temperature measurement unit which will
 temperature values via 433MHz RF link to Arduino gateway. The Arduino gateway will pass the measurement
 values to Domoticz via MQTT protocol.
 
+More information about the system can be found from [Domoticz forum](http://www.domoticz.com/forum/viewtopic.php?f=38&t=7389)
+
 More information about Arduino Domoticz Gateway can be found via following link:
 
 [Arduino-Domoticz-Gateway](https://github.com/MikaPetteriLundgren/Arduino-Domoticz-Gateway)
