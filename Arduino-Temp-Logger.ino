@@ -3,7 +3,7 @@
    Size of AT24C32 EEPROM memory is 4096 bytes. EEPROM is not used in this sketch though.
    
    Temperature readings are read from DS18B20 digital temperature sensor via OneWire bus
-   Data is sent with TX433N RF transmitter using VirtualWire library to Arduino gateway which sends data to Domoticz running on
+   Data is sent with TX433N RF transmitter using VirtualWire library to Arduino Domoticz Gateway which sends data to Domoticz running on
    Raspberry Pi using MQTT protocol.*/
 
 #include <DallasTemperature.h>
@@ -21,8 +21,8 @@ unsigned long PreviousTime = 0; // Unix time is compared to PreviousTime in orde
 
 float temperature = 0; // Variable to store temperature readings
 
-const String topicID = "TOPICID"; //topicID is used to separate sensors in Domoticz. topicID must be unique per Domoticz system. CHANGE THIS TO CORRECT ONE!!!
-const String dtype = "80"; // dtype (device type) is a value used by Domoticz server to determine sensor type. 82 means temp+hum and 80 means temp only.
+const int sensorIDX = 533; // IDX number of sensor connected to this device
+const int dtype = 80; // dtype (device type) is a value used by Domoticz server to determine sensor type. 82 means temp+hum and 80 means temp only.
 
 #define ONE_WIRE_BUS 2 // Data wire of OneWire bus is connected into pin 2 of the Arduino. Parasite powering scheme is used.
 OneWire oneWire(ONE_WIRE_BUS); // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
@@ -111,11 +111,11 @@ float tempReading() // Function TempReading reads temperature from DS18B20 temp 
   return (float) sensors.getTempCByIndex(0); // Return temperature value
 }
 
-String createDataToBeSent() // Function createDataToBeSent creates a String from topicID, dtype and measured temperature & humidity values. Created String is returned.
+String createDataToBeSent() // Function createDataToBeSent creates a String from sensorIDX, dtype and measured temperature values. Created String is returned.
 {
-  String dataString = topicID;
+  String dataString = String(sensorIDX);
   dataString += ':';
-  dataString += dtype;
+  dataString += String(dtype);
   dataString += ':';
   dataString += temperature;
   dataString.remove(dataString.length() - 1); // 2 digit precision of temperature value is changed to 1 digit precision. Last character of the String is removed.
